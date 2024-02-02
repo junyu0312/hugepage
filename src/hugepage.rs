@@ -8,7 +8,7 @@ use serde::{Deserialize, Serialize};
 
 const PAGE_SIZE: usize = 2 << 20;
 
-#[derive(Default, Serialize, Deserialize, Clone)]
+#[derive(Default, Debug,Serialize, Deserialize, Clone)]
 pub struct HugeTlbAllocator;
 
 unsafe impl Allocator for HugeTlbAllocator {
