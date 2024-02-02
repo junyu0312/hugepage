@@ -4,10 +4,11 @@ use std::{
 };
 
 use libc::{c_void, MAP_ANONYMOUS, MAP_FAILED, MAP_HUGETLB, MAP_PRIVATE, PROT_READ, PROT_WRITE};
+use serde::{Deserialize, Serialize};
 
 const PAGE_SIZE: usize = 2 << 20;
 
-#[derive(Default)]
+#[derive(Default, Serialize, Deserialize, Clone)]
 pub struct HugeTlbAllocator;
 
 unsafe impl Allocator for HugeTlbAllocator {

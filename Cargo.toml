@@ -8,3 +8,4 @@ authors = ["Zhang Junyu <junyu92@gmail.com>"]
 
 [dependencies]
 libc = "0.2.153"
+serde = { version = "1.0", features = ["derive", "rc"] }
