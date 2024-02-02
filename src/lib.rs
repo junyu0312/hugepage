@@ -1,4 +1,7 @@
 #![feature(allocator_api)]
+#![feature(trait_alias)]
+#![feature(nonnull_slice_from_raw_parts)]
+#![feature(int_roundings)]
 #![feature(alloc_layout_extra)]
 
 pub mod hugepage;
