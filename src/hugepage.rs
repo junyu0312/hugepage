@@ -7,6 +7,7 @@ use libc::{c_void, MAP_ANONYMOUS, MAP_FAILED, MAP_HUGETLB, MAP_PRIVATE, PROT_REA
 
 const PAGE_SIZE: usize = 2 << 20;
 
+#[derive(Default)]
 pub struct HugeTlbAllocator;
 
 unsafe impl Allocator for HugeTlbAllocator {
@@ -37,7 +38,6 @@ unsafe impl Allocator for HugeTlbAllocator {
 
             NonNull::slice_from_raw_parts(ptr, size)
         };
-
 
         Ok(ptr)
     }
